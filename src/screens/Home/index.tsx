@@ -13,8 +13,7 @@ import {
   Separator,
   ItemHour,
   ItemText,
-  Text,
-  Item,
+  TextBody,
   ItemStatus,
 } from "./styles";
 
@@ -24,7 +23,11 @@ const DATA = [
     data: [
       { hour: "20:00", name: "X-tudo", status: "failure" },
       { hour: "16:00", name: "Whey protein com leite", status: "success" },
-      { hour: "12:30", name: "Salada cesar", status: "success" },
+      {
+        hour: "12:30",
+        name: "Salada cesar com frango grelhado",
+        status: "success",
+      },
       { hour: "09:30", name: "Vitamina de abacate", status: "success" },
     ],
   },
@@ -33,7 +36,7 @@ const DATA = [
     data: [
       { hour: "16:00", name: "Strogonoff de frango", status: "failure" },
       { hour: "13:00", name: "Barra de sereal", status: "success" },
-      { hour: "11:00", name: "Salada de tomada", status: "failure" },
+      { hour: "11:00", name: "Salada de tomate", status: "failure" },
       { hour: "08:00", name: "Sorvete de flocos", status: "failure" },
     ],
   },
@@ -44,7 +47,7 @@ export function Home() {
     <Container>
       <Header />
       <PercentageCard />
-      <Text>Refeições</Text>
+      <TextBody>Refeições</TextBody>
       <Button icon="add" title="Nova refeição" />
 
       <SectionContainer>
@@ -58,9 +61,7 @@ export function Home() {
             <SectionItem>
               <ItemHour>{item.hour}</ItemHour>
               <Separator />
-              <ItemText numberOfLines={1} ellipsizeMode="tail">
-                {item.name}
-              </ItemText>
+              <ItemText>{item.name}</ItemText>
               <ItemStatus status={item.status} />
             </SectionItem>
           )}

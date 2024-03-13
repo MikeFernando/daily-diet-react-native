@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components/native";
+import { Text } from "react-native";
 
 type StatusProps = {
   status: Omit<object, "failure" | "success">;
@@ -11,7 +12,7 @@ export const Container = styled.View`
   background-color: ${({ theme }) => theme.COLORS.GRAY_100};
 `;
 
-export const Text = styled.Text`
+export const TextBody = styled.Text`
   ${({ theme }) => css`
     color: ${theme.COLORS.GRAY_700};
     font-size: ${theme.FONT_SIZE.MD}px;
@@ -47,11 +48,6 @@ export const SectionItem = styled.View`
   margin-bottom: 10px;
 `;
 
-export const Item = styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
-
 export const ItemHour = styled.Text`
   ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.SM}px;
@@ -66,7 +62,10 @@ export const Separator = styled.View`
   background-color: ${({ theme }) => theme.COLORS.GRAY_400};
 `;
 
-export const ItemText = styled.Text`
+export const ItemText = styled(Text).attrs(() => ({
+  numberOfLines: 1,
+  ellipsizeMode: "tail",
+}))`
   flex: 1;
 
   ${({ theme }) => css`
