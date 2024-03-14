@@ -8,8 +8,9 @@ import {
 
 import theme from "@theme/index";
 
-import { Home } from "@screens/Home";
 import { Loading } from "@components/Loading";
+
+import { Statistics } from "@screens/Statistics";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,8 +20,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar style="dark" translucent backgroundColor="transparent" />
-      {fontsLoaded ? <Home /> : <Loading />}
+      <StatusBar style="dark" backgroundColor="transparent" translucent />
+      {fontsLoaded ? <Statistics /> : <Loading />}
     </ThemeProvider>
   );
 }

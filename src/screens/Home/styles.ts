@@ -18,7 +18,7 @@ export const TextBody = styled.Text`
     font-size: ${theme.FONT_SIZE.MD}px;
     font-family: ${theme.FONT_FAMILY.REGULAR};
   `}
-  margin-top: 44px;
+  margin-top: 32px;
   margin-bottom: 12px;
 `;
 
@@ -62,19 +62,6 @@ export const Separator = styled.View`
   background-color: ${({ theme }) => theme.COLORS.GRAY_400};
 `;
 
-export const ItemText = styled(Text).attrs(() => ({
-  numberOfLines: 1,
-  ellipsizeMode: "tail",
-}))`
-  flex: 1;
-
-  ${({ theme }) => css`
-    font-size: ${theme.FONT_SIZE.MD}px;
-    color: ${theme.COLORS.GRAY_600};
-    font-family: ${theme.FONT_FAMILY.REGULAR};
-  `}
-`;
-
 export const ItemStatus = styled.View<StatusProps>`
   height: 16px;
   width: 16px;
@@ -88,4 +75,17 @@ export const ItemStatus = styled.View<StatusProps>`
       : css`
           background-color: ${theme.COLORS.RED_MID};
         `}
+`;
+
+export const ItemText = styled(Text).attrs(() => ({
+  numberOfLines: 1,
+  ellipsizeMode: "tail",
+}))`
+  flex: 1;
+
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.MD}px;
+    color: ${theme.COLORS.GRAY_600};
+    font-family: ${theme.FONT_FAMILY.REGULAR};
+  `}
 `;
