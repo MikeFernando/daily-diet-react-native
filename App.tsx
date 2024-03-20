@@ -10,7 +10,7 @@ import theme from "@theme/index";
 
 import { Loading } from "@components/Loading";
 
-import { NewMeal } from "@screens/NewMeal";
+import { Feedback } from "@screens/Feedback";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,7 +21,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style="dark" backgroundColor="transparent" translucent />
-      {fontsLoaded ? <NewMeal /> : <Loading />}
+      {fontsLoaded ? <Feedback /> : <Loading />}
     </ThemeProvider>
   );
 }
